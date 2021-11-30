@@ -1,0 +1,38 @@
+<html lang="EN">
+<head>
+    <title>DMP online stats</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+        filtered_data = {{ filtered_data | safe }}
+        for (let i = 0; i < filtered_data.length; i++) {
+            console.log(filtered_data[i])
+            google.charts.load('current', {'packages': ['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                let data = google.visualization.arrayToDataTable(filtered_data[i]);
+                let options = { title: filtered_data[i][0][0] };
+                let chart = new google.visualization.PieChart(document.getElementById('piechart' + i));
+                chart.draw(data, options);
+            }
+        }
+
+    </script>
+</head>
+<body>
+<h1>DMP Statistics</h1>
+
+<div id="piechart0" style="width: 1300px; height: 500px;"></div>
+<div id="piechart1" style="width: 1300px; height: 500px;"></div>
+<div id="piechart2" style="width: 1300px; height: 500px;"></div>
+<div id="piechart3" style="width: 1300px; height: 500px;"></div>
+<div id="piechart4" style="width: 1300px; height: 500px;"></div>
+<div id="piechart5" style="width: 1300px; height: 500px;"></div>
+<div id="piechart6" style="width: 1300px; height: 500px;"></div>
+<div id="piechart7" style="width: 1300px; height: 500px;"></div>
+<div id="piechart8" style="width: 1300px; height: 500px;"></div>
+<div id="piechart9" style="width: 1300px; height: 500px;"></div>
+<div id="piechart10" style="width: 1300px; height: 500px;"></div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<html lang="EN">
+<head>
+    <title>DMP online stats</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+        axios.get("{% url 'stats' %}")
+            .then((response) => {
+                console.log(response.data)
+                for (let i = 0; i < response.data["types"].length; i++) {
+                    console.log(response.data["types"][i])
+                    google.charts.load('current', {'packages': ['corechart']});
+                    google.charts.setOnLoadCallback(drawChart);
+                    function drawChart() {
+                        let data = google.visualization.arrayToDataTable(response.data["types"][i]);
+                        let options = { title: response.data["types"][i][0][0] };
+                        let chart = new google.visualization.PieChart(document.getElementById('piechart' + i));
+                        chart.draw(data, options);
+                    }
+                }
+            });
+    </script>
+</head>
+<body>
+<h1>DMP Statistics</h1>
+<div style="width:80%;">
+<form action="{% url 'filter' %}" method="get">
+    <table style="max-width: 20%;">
+    {% for question in questions %}
+        <tr>
+        {% for key, items in question.items %}
+            <td nowrap="nowrap">{{ key.1 }}</td>
+            <td>
+                <select size=8 name="{{ key.0 }}[]" multiple style="max-width: 50%; min-width: 10%; max-height: 2%;">
+                    {% for item in items %}
+                        <option value="{{ item }}">
+                            {% if item == True %}
+                                Yes
+                            {% elif item == False %}
+                                No
+                            {% elif item == None %}
+                                Unknown
+                            {% else  %}
+                                {{ item }}
+                            {% endif %}
+                        </option>
+                    {% endfor %}
+                </select>
+            </td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </table>
+<input type="submit">
+</form>
+</div>
+<div id="piechart0" style="width: 1300px; height: 500px;"></div>
+<div id="piechart1" style="width: 1300px; height: 500px;"></div>
+<div id="piechart2" style="width: 1300px; height: 500px;"></div>
+<div id="piechart3" style="width: 1300px; height: 500px;"></div>
+<div id="piechart4" style="width: 1300px; height: 500px;"></div>
+<div id="piechart5" style="width: 1300px; height: 500px;"></div>
+<div id="piechart6" style="width: 1300px; height: 500px;"></div>
+<div id="piechart7" style="width: 1300px; height: 500px;"></div>
+<div id="piechart8" style="width: 1300px; height: 500px;"></div>
+<div id="piechart9" style="width: 1300px; height: 500px;"></div>
+<div id="piechart10" style="width: 1300px; height: 500px;"></div>
+</body>
+</html>

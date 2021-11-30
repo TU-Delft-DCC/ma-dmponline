@@ -1,0 +1,75 @@
+{
+   "application":"DMPonline",
+   "source":"GET /api/v1/plans/83643",
+   "time":"2021-11-02T15:53:16+00:00",
+   "caller":"",
+   "code":200,
+   "message":"OK",
+   "page":1,
+   "per_page":20,
+   "total_items":1,
+   "items":[
+      {
+         "dmp":{
+            "schema":"https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/tree/master/examples/JSON/JSON-schema/1.0",
+            "title":"Develop a manufacture-ready Syringe Extension Device (SED) for Manual Vacuum Procedure in East Africa ",
+            "description":"Chloe SED is a syringe extender device to be used during the paracervical block procedure, done prior to manual vacuum aspiration in order to administer local anesthesia into the cervix. The primary goal of the project is to identify the materials that the SED will be manufactured from, and the procedure to be used for manufacture. It is also within the project scope to validate that the design of the device is as or more comfortable for medical professionals to use during the procedure and to ensure it significantly improves visibility of the injection site on the cervix and consequently, the accuracy of the injections.",
+            "language":"eng",
+            "created":"2021-09-02T08:31:44Z",
+            "modified":"2021-09-16T12:37:56Z",
+            "ethical_issues_exist":"unknown",
+            "dmp_id":{
+               "type":"url",
+               "identifier":"http://dmponline.dcc.ac.uk/api/v1/plans/83643"
+            },
+            "contact":{
+               "name":"",
+               "mbox":"",
+               "affiliation":{
+                  "name":"Delft University of Technology",
+                  "abbreviation":"TU Delft"
+               }
+            },
+            "project":[
+               {
+                  "title":"Develop a manufacture-ready Syringe Extension Device (SED) for Manual Vacuum Procedure in East Africa ",
+                  "description":"Chloe SED is a syringe extender device to be used during the paracervical block procedure, done prior to manual vacuum aspiration in order to administer local anesthesia into the cervix. The primary goal of the project is to identify the materials that the SED will be manufactured from, and the procedure to be used for manufacture. It is also within the project scope to validate that the design of the device is as or more comfortable for medical professionals to use during the procedure and to ensure it significantly improves visibility of the injection site on the cervix and consequently, the accuracy of the injections.",
+                  "start":"2021-07-12T00:00:00Z",
+                  "end":"2021-12-17T00:00:00Z"
+               }
+            ],
+            "dataset":[
+               {
+                  "title":"Generic Dataset",
+                  "personal_data":"unknown",
+                  "sensitive_data":"unknown",
+                  "dataset_id":{
+                     "type":"url",
+                     "identifier":"http://dmponline.dcc.ac.uk/api/v1/plans/83643"
+                  },
+                  "distribution":[
+                     {
+                        "title":"PDF - Develop a manufacture-ready Syringe Extension Device (SED) for Manual Vacuum Procedure in East Africa ",
+                        "data_access":"open",
+                        "download_url":"https://dmponline.tudelft.nl/plans/83643/export.pdf",
+                        "format":[
+                           "application/pdf"
+                        ]
+                     }
+                  ]
+               }
+            ],
+            "extension":[
+               {
+                  "DMPonline":{
+                     "template":{
+                        "id":7093,
+                        "title":"TU Delft Data Management Plan template (2021) "
+                     }
+                  }
+               }
+            ]
+         }
+      }
+   ]
+}
